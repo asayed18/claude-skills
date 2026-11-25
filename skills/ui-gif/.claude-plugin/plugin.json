@@ -1,11 +1,12 @@
 {
   "name": "ui-gif",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Turn browser screenshots into demo GIFs of UI changes, with a highlighted pointer, click pulse, highlight box and captions.",
   "author": {
     "name": "Ahmed Sayed",
     "url": "https://github.com/asayed18"
   },
   "repository": "https://github.com/asayed18/claude-skills",
-  "license": "MIT"
+  "license": "MIT",
+  "skills": ["./"]
 }

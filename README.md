@@ -10,7 +10,7 @@ Agent skills for Claude Code and other tools that read the `SKILL.md` format.
 
 ### As a Claude Code plugin
 
-In Claude Code, add this repository as a plugin marketplace, then install the plugin:
+Each skill is its own plugin, so you install only the skills you pick. In Claude Code, add this repository as a plugin marketplace once, then install a skill by its name:
 
 ```
 /plugin marketplace add asayed18/claude-skills
@@ -24,7 +24,7 @@ claude plugin marketplace add asayed18/claude-skills
 claude plugin install ui-gif@asayed18
 ```
 
-Update later with `/plugin marketplace update asayed18`. Plugin skills are namespaced, so the skill shows up as `ui-gif:ui-gif`.
+`/plugin` without arguments lists every skill in the marketplace to pick from. Update later with `/plugin marketplace update asayed18`. Plugin skills are namespaced, so the skill shows up as `ui-gif:ui-gif`.
 
 ### By copying the folder
 
@@ -59,6 +59,20 @@ uv run --with pillow python -I <skill-dir>/scripts/build_gif.py scene.json --wid
 Requirements: Python with Pillow, and `ffmpeg` on the `PATH` to shrink the result (optional; without it the GIF is larger). Fonts fall back across macOS, Linux and Windows, or set one in the scene.
 
 The script writes the GIF and a `.sheet.png` of up to four keyframes for a quick visual check. See [ui-gif/SKILL.md](skills/ui-gif/SKILL.md) for the scene format, timings and style.
+
+## Adding a skill
+
+Each skill folder under `skills/` is a self-contained plugin:
+
+```
+skills/<name>/
+├── SKILL.md
+├── .claude-plugin/plugin.json   # name, version, "skills": ["./"]
+├── assets/icon.png              # square PNG, 512 to 2048 px
+└── scripts/ ...                 # optional
+```
+
+Add the folder, then one entry to `.claude-plugin/marketplace.json` with `"source": "./skills/<name>"`, a row to the table above, and an install line. Check with `claude plugin validate .` and `claude plugin validate skills/<name>`.
 
 ## License
 

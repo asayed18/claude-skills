@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "asayed18",
-  "description": "Agent skills by asayed18 for Claude Code.",
+  "description": "Agent skills by asayed18 for Claude Code. Each skill is its own plugin, so you install only the ones you want.",
   "owner": {
     "name": "Ahmed Sayed",
     "url": "https://github.com/asayed18"
@@ -10,7 +10,7 @@
     {
       "name": "ui-gif",
       "description": "Turn browser screenshots into demo GIFs of UI changes, with a highlighted pointer, click pulse, highlight box and captions.",
-      "source": "./",
+      "source": "./skills/ui-gif",
       "category": "productivity"
     }
   ]

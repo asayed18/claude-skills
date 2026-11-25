@@ -19,6 +19,10 @@ For a single project, copy it into that project's `.claude/skills/` instead. Eac
 
 ## ui-gif
 
+![ui-gif demo: a pointer with a highlighted ring clicks the Google search box, a red box marks the new element, and a caption bar explains each step](docs/ui-gif-demo.gif)
+
+Built by the skill from three screenshots of google.com, at `--width 720` (0.28 MB).
+
 Ask for a GIF, an animated demo or a before/after clip of a web UI. The skill guides the agent through four steps:
 
 1. Capture keyframes in the browser.
